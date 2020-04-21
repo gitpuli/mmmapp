@@ -1,0 +1,124 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-user-instance-heading" jhiTranslate="mmmappApp.userInstance.home.createOrEditLabel">Create or edit a User Instance</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userInstance.userName" for="field_userName">User Name</label>
+                    <input type="text" class="form-control" name="userName" id="field_userName"
+                           formControlName="userName"/>
+                    <div *ngIf="editForm.get('userName')!.invalid && (editForm.get('userName')!.dirty || editForm.get('userName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('userName')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userInstance.userEmail" for="field_userEmail">User Email</label>
+                    <input type="text" class="form-control" name="userEmail" id="field_userEmail"
+                           formControlName="userEmail"/>
+                    <div *ngIf="editForm.get('userEmail')!.invalid && (editForm.get('userEmail')!.dirty || editForm.get('userEmail')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('userEmail')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userInstance.userPhone" for="field_userPhone">User Phone</label>
+                    <input type="text" class="form-control" name="userPhone" id="field_userPhone"
+                           formControlName="userPhone"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userInstance.password" for="field_password">Password</label>
+                    <input type="text" class="form-control" name="password" id="field_password"
+                           formControlName="password"/>
+                    <div *ngIf="editForm.get('password')!.invalid && (editForm.get('password')!.dirty || editForm.get('password')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('password')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userInstance.createdDate" for="field_createdDate">Created Date</label>
+                    <div class="input-group">
+                        <input id="field_createdDate" type="text" class="form-control" name="createdDate" ngbDatepicker #createdDateDp="ngbDatepicker" formControlName="createdDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="createdDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('createdDate')!.invalid && (editForm.get('createdDate')!.dirty || editForm.get('createdDate')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('createdDate')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userInstance.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                    <div *ngIf="editForm.get('createdBy')!.invalid && (editForm.get('createdBy')!.dirty || editForm.get('createdBy')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('createdBy')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userInstance.lastUpdateDate" for="field_lastUpdateDate">Last Update Date</label>
+                    <div class="input-group">
+                        <input id="field_lastUpdateDate" type="text" class="form-control" name="lastUpdateDate" ngbDatepicker #lastUpdateDateDp="ngbDatepicker" formControlName="lastUpdateDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="lastUpdateDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('lastUpdateDate')!.invalid && (editForm.get('lastUpdateDate')!.dirty || editForm.get('lastUpdateDate')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('lastUpdateDate')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userInstance.lastUpdateBy" for="field_lastUpdateBy">Last Update By</label>
+                    <input type="text" class="form-control" name="lastUpdateBy" id="field_lastUpdateBy"
+                           formControlName="lastUpdateBy"/>
+                    <div *ngIf="editForm.get('lastUpdateBy')!.invalid && (editForm.get('lastUpdateBy')!.dirty || editForm.get('lastUpdateBy')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('lastUpdateBy')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

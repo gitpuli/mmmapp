@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="mmmappApp.userGoalMmm.home.title">User Goal Mmms</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-user-goal-mmm" [routerLink]="['/user-goal-mmm/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="mmmappApp.userGoalMmm.home.createLabel">
+            Create a new User Goal Mmm
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="userGoalMmms?.length === 0">
+        <span jhiTranslate="mmmappApp.userGoalMmm.home.notFound">No userGoalMmms found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="userGoalMmms?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.rightAnkle">Right Ankle</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.leftAnkle">Left Ankle</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.rightCalf">Right Calf</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.leftCalf">Left Calf</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.rightThigh">Right Thigh</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.leftThigh">Left Thigh</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.rightArm">Right Arm</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.leftArm">Left Arm</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.hips">Hips</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.waist">Waist</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.bust">Bust</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.createdDate">Created Date</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.createdBy">Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.lastUpdateDate">Last Update Date</span></th>
+                    <th scope="col" ><span jhiTranslate="mmmappApp.userGoalMmm.lastUpdateBy">Last Update By</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let userGoalMmm of userGoalMmms ;trackBy: trackId">
+                    <td><a [routerLink]="['/user-goal-mmm', userGoalMmm.id, 'view']">{{ userGoalMmm.id }}</a></td>
+                    <td>{{ userGoalMmm.rightAnkle }}</td>
+                    <td>{{ userGoalMmm.leftAnkle }}</td>
+                    <td>{{ userGoalMmm.rightCalf }}</td>
+                    <td>{{ userGoalMmm.leftCalf }}</td>
+                    <td>{{ userGoalMmm.rightThigh }}</td>
+                    <td>{{ userGoalMmm.leftThigh }}</td>
+                    <td>{{ userGoalMmm.rightArm }}</td>
+                    <td>{{ userGoalMmm.leftArm }}</td>
+                    <td>{{ userGoalMmm.hips }}</td>
+                    <td>{{ userGoalMmm.waist }}</td>
+                    <td>{{ userGoalMmm.bust }}</td>
+                    <td>{{ userGoalMmm.createdDate | date:'mediumDate' }}</td>
+                    <td>{{ userGoalMmm.createdBy }}</td>
+                    <td>{{ userGoalMmm.lastUpdateDate | date:'mediumDate' }}</td>
+                    <td>{{ userGoalMmm.lastUpdateBy }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/user-goal-mmm', userGoalMmm.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/user-goal-mmm', userGoalMmm.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(userGoalMmm)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

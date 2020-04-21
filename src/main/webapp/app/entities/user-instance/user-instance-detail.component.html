@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="userInstance">
+            <h2><span jhiTranslate="mmmappApp.userInstance.detail.title">User Instance</span> {{ userInstance.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="mmmappApp.userInstance.userName">User Name</span></dt>
+                <dd>
+                    <span>{{ userInstance.userName }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userInstance.userEmail">User Email</span></dt>
+                <dd>
+                    <span>{{ userInstance.userEmail }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userInstance.userPhone">User Phone</span></dt>
+                <dd>
+                    <span>{{ userInstance.userPhone }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userInstance.password">Password</span></dt>
+                <dd>
+                    <span>{{ userInstance.password }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userInstance.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ userInstance.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userInstance.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ userInstance.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userInstance.lastUpdateDate">Last Update Date</span></dt>
+                <dd>
+                    <span>{{ userInstance.lastUpdateDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userInstance.lastUpdateBy">Last Update By</span></dt>
+                <dd>
+                    <span>{{ userInstance.lastUpdateBy }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/user-instance', userInstance.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

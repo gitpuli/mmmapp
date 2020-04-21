@@ -1,0 +1,148 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-user-goal-mmm-heading" jhiTranslate="mmmappApp.userGoalMmm.home.createOrEditLabel">Create or edit a User Goal Mmm</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.rightAnkle" for="field_rightAnkle">Right Ankle</label>
+                    <input type="number" class="form-control" name="rightAnkle" id="field_rightAnkle"
+                           formControlName="rightAnkle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.leftAnkle" for="field_leftAnkle">Left Ankle</label>
+                    <input type="number" class="form-control" name="leftAnkle" id="field_leftAnkle"
+                           formControlName="leftAnkle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.rightCalf" for="field_rightCalf">Right Calf</label>
+                    <input type="number" class="form-control" name="rightCalf" id="field_rightCalf"
+                           formControlName="rightCalf"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.leftCalf" for="field_leftCalf">Left Calf</label>
+                    <input type="number" class="form-control" name="leftCalf" id="field_leftCalf"
+                           formControlName="leftCalf"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.rightThigh" for="field_rightThigh">Right Thigh</label>
+                    <input type="number" class="form-control" name="rightThigh" id="field_rightThigh"
+                           formControlName="rightThigh"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.leftThigh" for="field_leftThigh">Left Thigh</label>
+                    <input type="number" class="form-control" name="leftThigh" id="field_leftThigh"
+                           formControlName="leftThigh"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.rightArm" for="field_rightArm">Right Arm</label>
+                    <input type="number" class="form-control" name="rightArm" id="field_rightArm"
+                           formControlName="rightArm"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.leftArm" for="field_leftArm">Left Arm</label>
+                    <input type="number" class="form-control" name="leftArm" id="field_leftArm"
+                           formControlName="leftArm"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.hips" for="field_hips">Hips</label>
+                    <input type="number" class="form-control" name="hips" id="field_hips"
+                           formControlName="hips"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.waist" for="field_waist">Waist</label>
+                    <input type="number" class="form-control" name="waist" id="field_waist"
+                           formControlName="waist"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.bust" for="field_bust">Bust</label>
+                    <input type="number" class="form-control" name="bust" id="field_bust"
+                           formControlName="bust"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.createdDate" for="field_createdDate">Created Date</label>
+                    <div class="input-group">
+                        <input id="field_createdDate" type="text" class="form-control" name="createdDate" ngbDatepicker #createdDateDp="ngbDatepicker" formControlName="createdDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="createdDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('createdDate')!.invalid && (editForm.get('createdDate')!.dirty || editForm.get('createdDate')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('createdDate')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                    <div *ngIf="editForm.get('createdBy')!.invalid && (editForm.get('createdBy')!.dirty || editForm.get('createdBy')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('createdBy')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.lastUpdateDate" for="field_lastUpdateDate">Last Update Date</label>
+                    <div class="input-group">
+                        <input id="field_lastUpdateDate" type="text" class="form-control" name="lastUpdateDate" ngbDatepicker #lastUpdateDateDp="ngbDatepicker" formControlName="lastUpdateDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="lastUpdateDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('lastUpdateDate')!.invalid && (editForm.get('lastUpdateDate')!.dirty || editForm.get('lastUpdateDate')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('lastUpdateDate')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="mmmappApp.userGoalMmm.lastUpdateBy" for="field_lastUpdateBy">Last Update By</label>
+                    <input type="text" class="form-control" name="lastUpdateBy" id="field_lastUpdateBy"
+                           formControlName="lastUpdateBy"/>
+                    <div *ngIf="editForm.get('lastUpdateBy')!.invalid && (editForm.get('lastUpdateBy')!.dirty || editForm.get('lastUpdateBy')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('lastUpdateBy')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

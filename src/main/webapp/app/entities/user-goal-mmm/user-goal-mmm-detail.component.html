@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="userGoalMmm">
+            <h2><span jhiTranslate="mmmappApp.userGoalMmm.detail.title">User Goal Mmm</span> {{ userGoalMmm.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.rightAnkle">Right Ankle</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.rightAnkle }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.leftAnkle">Left Ankle</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.leftAnkle }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.rightCalf">Right Calf</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.rightCalf }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.leftCalf">Left Calf</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.leftCalf }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.rightThigh">Right Thigh</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.rightThigh }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.leftThigh">Left Thigh</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.leftThigh }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.rightArm">Right Arm</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.rightArm }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.leftArm">Left Arm</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.leftArm }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.hips">Hips</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.hips }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.waist">Waist</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.waist }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.bust">Bust</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.bust }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.lastUpdateDate">Last Update Date</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.lastUpdateDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userGoalMmm.lastUpdateBy">Last Update By</span></dt>
+                <dd>
+                    <span>{{ userGoalMmm.lastUpdateBy }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/user-goal-mmm', userGoalMmm.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

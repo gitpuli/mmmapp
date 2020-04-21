@@ -1,0 +1,29 @@
+{
+  "mmmappApp": {
+    "userInstance": {
+      "home": {
+        "title": "User Instances",
+        "createLabel": "Create a new User Instance",
+        "createOrEditLabel": "Create or edit a User Instance",
+        "notFound": "No User Instances found"
+      },
+      "created": "A new User Instance is created with identifier {{ param }}",
+      "updated": "A User Instance is updated with identifier {{ param }}",
+      "deleted": "A User Instance is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete User Instance {{ id }}?"
+      },
+      "detail": {
+        "title": "User Instance"
+      },
+      "userName": "User Name",
+      "userEmail": "User Email",
+      "userPhone": "User Phone",
+      "password": "Password",
+      "createdDate": "Created Date",
+      "createdBy": "Created By",
+      "lastUpdateDate": "Last Update Date",
+      "lastUpdateBy": "Last Update By"
+    }
+  }
+}

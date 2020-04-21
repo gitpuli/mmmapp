@@ -1,0 +1,92 @@
+{
+    "name": "UserGoalMmm",
+    "fields": [
+        {
+            "fieldName": "rightAnkle",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "leftAnkle",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "rightCalf",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "leftCalf",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "rightThigh",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "leftThigh",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "rightArm",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "leftArm",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "hips",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "waist",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "bust",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastUpdateDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastUpdateBy",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200421054800",
+    "javadoc": "The UserGoalmmm entity.",
+    "entityTableName": "user_goal_mmm",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "mmmapp"
+    ]
+}

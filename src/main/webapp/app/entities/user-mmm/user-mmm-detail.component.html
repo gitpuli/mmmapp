@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="userMmm">
+            <h2><span jhiTranslate="mmmappApp.userMmm.detail.title">User Mmm</span> {{ userMmm.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="mmmappApp.userMmm.rightAnkle">Right Ankle</span></dt>
+                <dd>
+                    <span>{{ userMmm.rightAnkle }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.leftAnkle">Left Ankle</span></dt>
+                <dd>
+                    <span>{{ userMmm.leftAnkle }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.rightCalf">Right Calf</span></dt>
+                <dd>
+                    <span>{{ userMmm.rightCalf }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.leftCalf">Left Calf</span></dt>
+                <dd>
+                    <span>{{ userMmm.leftCalf }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.rightThigh">Right Thigh</span></dt>
+                <dd>
+                    <span>{{ userMmm.rightThigh }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.leftThigh">Left Thigh</span></dt>
+                <dd>
+                    <span>{{ userMmm.leftThigh }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.rightArm">Right Arm</span></dt>
+                <dd>
+                    <span>{{ userMmm.rightArm }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.leftArm">Left Arm</span></dt>
+                <dd>
+                    <span>{{ userMmm.leftArm }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.hips">Hips</span></dt>
+                <dd>
+                    <span>{{ userMmm.hips }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.waist">Waist</span></dt>
+                <dd>
+                    <span>{{ userMmm.waist }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.bust">Bust</span></dt>
+                <dd>
+                    <span>{{ userMmm.bust }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ userMmm.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ userMmm.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.lastUpdateDate">Last Update Date</span></dt>
+                <dd>
+                    <span>{{ userMmm.lastUpdateDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="mmmappApp.userMmm.lastUpdateBy">Last Update By</span></dt>
+                <dd>
+                    <span>{{ userMmm.lastUpdateBy }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/user-mmm', userMmm.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
